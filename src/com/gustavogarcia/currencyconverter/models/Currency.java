@@ -1,7 +1,5 @@
 package com.gustavogarcia.currencyconverter.models;
 
-import java.util.List;
-
 public enum Currency {
     MXN("Mexican Peso"), 
     USD("United States Dollar"),
