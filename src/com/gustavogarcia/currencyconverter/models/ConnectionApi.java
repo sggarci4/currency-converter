@@ -16,11 +16,12 @@ public class ConnectionApi {
     private String targetCode;
     private double amountLocalCurrency;
     private String conversionResult;
+
     public ConnectionApi(String baseCode, String targetCode, double amountLocalCurrency) throws IOException, InterruptedException {
         this.baseCode = baseCode;
         this.targetCode = targetCode;
         this.amountLocalCurrency = amountLocalCurrency;
-        this.address = "https://v6.exchangerate-api.com/v6/93de2c4a004ddfae8a9bb5ad/pair/" + this.baseCode +"/" + this.targetCode + "/" + this.amountLocalCurrency;
+        this.address = "https://v6.exchangerate-api.com/v6/93de2c4a004ddfae8a9bb5ad/pair/" + this.baseCode + "/" + this.targetCode + "/" + this.amountLocalCurrency;
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(address))
@@ -33,7 +34,7 @@ public class ConnectionApi {
         conversionResult = jsonObject.get("conversion_result").getAsString();
     }
 
-    public String sendTranslation (){
+    public String sendTranslation() {
 
         return conversionResult;
     }

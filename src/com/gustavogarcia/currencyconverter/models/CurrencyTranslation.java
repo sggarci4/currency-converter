@@ -13,10 +13,6 @@ public class CurrencyTranslation {
     private LocalDateTime dateTime;
     ConnectionApi api;
 
-    public LocalDateTime getDateTime() {
-        return dateTime;
-    }
-
     public CurrencyTranslation(String baseCode, String targetCode, double amount) throws IOException, InterruptedException {
         this.baseCode = baseCode;
         this.targetCode = targetCode;
